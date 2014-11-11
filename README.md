@@ -68,7 +68,7 @@ using Dart.
 
 There is no `#define` – the only definition is made by the transformer mode.
 
-## Commented-out syntax
+## Commenting out branches
 
 Sometimes, to play better with static analysis tooling, you might want to
 hide some of the lines from it. Here's a solution:
@@ -82,4 +82,10 @@ hide some of the lines from it. Here's a solution:
 ```
 
 Without the extra `/*` and `*/`, your IDE would probably display an error
-about defining the `speed` variable twice.
+about defining the `speed` variable twice. But `simple_preprocessor` correctly
+identifies this syntax and will uncomment the contents between `#if` end `#else`
+for debug builds.
+
+Note that the extra comment _must_ come immediately after the `#if` or `#else`
+comment and directly before the `#else` or `#endif` comment. No whitespace is
+permitted.
