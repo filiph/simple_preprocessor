@@ -1,0 +1,8 @@
+name: simple_preprocessor
+version: 0.0.1
+description: A simple preprocessor transformer that only understands "#if DEBUG"
+dependencies:
+  barback: ">=0.15.2+2 <1.0.0"
+  string_scanner: ">=0.1.2 <1.0.0"
+dev_dependencies:
+  unittest: ">=0.11.0+5 <1.0.0"
