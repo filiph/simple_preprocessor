@@ -7,10 +7,12 @@ in [C preprocessors][]. The syntax should be familiar.
 
 Let's start with an example:
 
-    _coreAjax = $['core-ajax'];  // Get <core-ajax> element.
-    /* #if DEBUG */
-    _coreAjax.url = "mock.json";  // Change actual prod URL to a mock file.
-    /* #endif */
+```dart
+_coreAjax = $['core-ajax'];  // Get <core-ajax> element.
+/* #if DEBUG */
+_coreAjax.url = "mock.json";  // Change actual prod URL to a mock file.
+/* #endif */
+```
 
 The URL-changing line will only be included in debug builds (which is also the
 default mode for `pub serve`). The line will not exist in release builds.
@@ -18,20 +20,24 @@ default mode for `pub serve`). The line will not exist in release builds.
 Since you can change build mode to any custom string by running
 `pub build --mode=<mode>`, you can have things like this:
 
-    /* #if LOCALHOST */
-    baseUrl = "http://localhost/";
-    /* #endif */
+```dart
+/* #if LOCALHOST */
+baseUrl = "http://localhost/";
+/* #endif */
+```
 
 ## How to use this
 
 In your `pubspec.yaml`, add simple_preprocessor as a dependency and as
 a Transformer. Like this:
 
-    dependencies:
-      simple_preprocessor: any
-      ...
-    transformers
-    - simple_preprocessor
+```yaml
+dependencies:
+  simple_preprocessor: any
+  ...
+transformers
+- simple_preprocessor
+```
 
 Try to include it before any other transformer (it's a _pre_-processor, after
 all).
@@ -67,11 +73,13 @@ There is no `#define` – the only definition is made by the transformer mode.
 Sometimes, to play better with static analysis tooling, you might want to
 hide some of the lines from it. Here's a solution:
 
-      /* #if DEBUG *//*
-      var speed = 1000;
-    *//* #else */
-      var speed = 100;
-      /* #endif */
+```dart
+  /* #if DEBUG *//*
+  var speed = 1000;
+*//* #else */
+  var speed = 100;
+  /* #endif */
+```
 
 Without the extra `/*` and `*/`, your IDE would probably display an error
 about defining the `speed` variable twice.
