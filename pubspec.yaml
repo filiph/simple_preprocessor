@@ -1,5 +1,5 @@
 name: simple_preprocessor
-version: 0.0.1
+version: 0.0.2
 author: Filip Hracek <filip.hracek@gmail.com>
 description:
   A simple preprocessor transformer that mimics the C preprocessor with

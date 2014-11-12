@@ -45,7 +45,7 @@ all).
 ## Warning
 
 This is _not_ a best practice. You're changing semantics of your program by
-a non-standard control structure that — worse still — lives in a _comment_. The
+a non-standard control mechanism that — worse still — lives in a _comment_. The
 only thing that kind of makes this almost okay is that the `#if` directive
 is so well recognized.
 
