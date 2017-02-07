@@ -1,12 +1,12 @@
 name: simple_preprocessor
-version: 0.0.2
+version: 0.0.3
 author: Filip Hracek <filip.hracek@gmail.com>
 description:
   A simple preprocessor transformer that mimics the C preprocessor with
   directives like `#if DEBUG`.
 homepage: https://github.com/filiph/simple_preprocessor
 dependencies:
-  barback: ">=0.15.2+2 <1.0.0"
-  string_scanner: ">=0.1.2 <1.0.0"
+  barback: ">=0.15.2+9 <1.0.0"
+  string_scanner: ">=1.0.1 <2.0.0"
 dev_dependencies:
-  unittest: ">=0.11.0+5 <1.0.0"
+  unittest: ^0.11.7
